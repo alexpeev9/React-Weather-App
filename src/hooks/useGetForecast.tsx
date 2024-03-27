@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import getEndpointUrl from "../utils/helpers";
+import { getEndpointUrl } from "../utils/helpers";
 import useGetCoordinates from "./useGetCoordinates";
+import { Measurement } from "../utils/types";
 
-export default function useGetForecast() {
+export default function useGetForecast(measurement: Measurement) {
   const { coordinates } = useGetCoordinates();
 
   const [forecastData, setForeCastData] = useState(null);
@@ -12,10 +13,14 @@ export default function useGetForecast() {
 
   useEffect(() => {
     if (!coordinates.latitude || !coordinates.longitude) return;
-
+    setLoading(true);
     axios({
       method: "get",
-      url: `${getEndpointUrl(coordinates.latitude, coordinates.longitude)}`,
+      url: `${getEndpointUrl(
+        coordinates.latitude,
+        coordinates.longitude,
+        measurement
+      )}`,
     })
       .then((res) => {
         setForeCastData(res.data);
@@ -26,7 +31,7 @@ export default function useGetForecast() {
       .finally(() => {
         setLoading(false);
       });
-  }, [coordinates]);
+  }, [coordinates, measurement]);
 
   return { forecastData, loading };
 }
