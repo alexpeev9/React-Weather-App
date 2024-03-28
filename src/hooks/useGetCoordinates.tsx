@@ -2,10 +2,7 @@ import { useEffect, useState } from "react";
 import { Coordinates } from "../utils/types";
 
 export default function useGetCoordinates() {
-  const [coordinates, setCoordinates] = useState({
-    latitude: null,
-    longitude: null,
-  } as Coordinates);
+  const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
