@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-
-interface Coordinates {
-  latitude: number | null;
-  longitude: number | null;
-}
+import { Coordinates } from "../utils/types";
 
 export default function useGetCoordinates() {
   const [coordinates, setCoordinates] = useState({

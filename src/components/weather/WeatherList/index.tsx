@@ -9,16 +9,14 @@ import { UseMeasurementContext } from "../../../contexts/MeasurementContext";
 const measurementValues = ["metric", "imperial"];
 
 export default function WeatherList() {
-  const { measurementData, setMeasurementData } = UseMeasurementContext();
+  const { measurement, saveMeasurement } = UseMeasurementContext();
 
-  const { forecastData, loading } = useGetForecast(
-    measurementData as Measurement
-  );
+  const { forecastData, loading } = useGetForecast(measurement as Measurement);
 
   const handleUnitChange = (event: ChangeEvent<HTMLInputElement>) => {
     const currentValue = event.target.value;
     if (!measurementValues.includes(currentValue)) return;
-    setMeasurementData(currentValue as Measurement);
+    saveMeasurement(currentValue as Measurement);
   };
 
   console.log(forecastData);
@@ -30,7 +28,7 @@ export default function WeatherList() {
           id="metric"
           name="measurement"
           value="metric"
-          checked={measurementData === "metric"}
+          checked={measurement === "metric"}
           onChange={handleUnitChange}
         />
         <label htmlFor="metric">Metric</label>
@@ -39,7 +37,7 @@ export default function WeatherList() {
           id="imperial"
           name="measurement"
           value="imperial"
-          checked={measurementData === "imperial"}
+          checked={measurement === "imperial"}
           onChange={handleUnitChange}
         />
         <label htmlFor="imperial">Imperial</label>

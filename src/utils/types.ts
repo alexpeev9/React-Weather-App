@@ -6,6 +6,11 @@ export type Props = {
 
 export type Measurement = "metric" | "imperial" | null;
 
+export type Coordinates = {
+  latitude: number | null;
+  longitude: number | null;
+};
+
 export type WeatherInfo = {
   main: string;
   icon: string;
