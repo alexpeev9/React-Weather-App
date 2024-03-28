@@ -1,15 +1,14 @@
 import { ChangeEvent } from "react";
 
-import { MeasurementContextType } from "../../../contexts/MeasurementContext";
+import { UseMeasurementContext } from "../../../contexts/MeasurementContext";
 
 import { Measurement } from "../../../utils/types";
 
 const measurementValues = ["metric", "imperial"];
 
-export const MeasurementForm = ({
-  measurement,
-  saveMeasurement,
-}: MeasurementContextType) => {
+export const MeasurementForm = () => {
+  const { measurement, saveMeasurement } = UseMeasurementContext();
+
   const handleUnitChange = (event: ChangeEvent<HTMLInputElement>) => {
     const currentValue = event.target.value;
     if (!measurementValues.includes(currentValue)) return;

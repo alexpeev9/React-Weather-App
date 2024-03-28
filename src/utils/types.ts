@@ -15,9 +15,10 @@ export type WeatherInfo = {
   main: string;
   icon: string;
   description: string;
+  time: string;
 };
 
-export type WeatherData = {
+export type WeatherListInfo = {
   dt_txt: string;
   weather: WeatherInfo[];
 };
@@ -27,5 +28,17 @@ export type WeatherList = {
     name: string;
     country: string;
   };
-  list: WeatherData[];
+  list: WeatherListInfo[];
+};
+
+export type WeatherListData = {
+  [date: string]: Array<WeatherInfo>;
+};
+
+export type WeatherData = {
+  city: {
+    name: string;
+    country: string;
+  };
+  weatherList: WeatherListData;
 };

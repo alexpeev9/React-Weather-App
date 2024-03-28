@@ -1,20 +1,14 @@
-import { UseMeasurementContext } from "../../contexts/MeasurementContext";
-import useGetCoordinates from "../../hooks/useGetCoordinates";
-
 import WeatherList from "../../components/weather/WeatherList";
 import { MeasurementForm } from "../../components/weather/MeasurementForm";
+import { UseWeatherContext } from "../../contexts/WeatherContext";
 
 export default function Home() {
-  const { coordinates } = useGetCoordinates();
-  const { measurement, saveMeasurement } = UseMeasurementContext();
+  const weather = UseWeatherContext();
 
-  return coordinates ? (
+  return weather ? (
     <>
-      <MeasurementForm
-        measurement={measurement}
-        saveMeasurement={saveMeasurement}
-      />
-      <WeatherList measurement={measurement} coordinates={coordinates} />
+      <MeasurementForm />
+      <WeatherList weather={weather} />
     </>
   ) : (
     <>Please allow geo locations</>

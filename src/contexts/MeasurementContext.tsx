@@ -1,9 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
-import { getUserMeasurement } from "../utils/helpers";
+import { getUserMeasurement, saveUserMeasurement } from "../utils/helpers";
 import { Measurement, Props } from "../utils/types";
-
-const LS_NAME = "measurement";
 
 const MeasurementContext = createContext<MeasurementContextType>({
   measurement: null,
@@ -22,7 +20,7 @@ export function MeasurementProvider({ children }: Props) {
     if (!measurement) return;
 
     setMeasurement(measurement);
-    localStorage.setItem(LS_NAME, measurement);
+    saveUserMeasurement(measurement);
   }
 
   return (
