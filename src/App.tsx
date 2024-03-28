@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { MeasurementProvider } from "./contexts/MeasurementContext";
+import { WeatherProvider } from "./contexts/WeatherContext";
 
 import Home from "./pages/Home";
-import Layout from "./components/commons/Layout";
-import { WeatherProvider } from "./contexts/WeatherContext";
+import Details from "./pages/Details";
 
 export default function App() {
   return (
@@ -12,9 +12,8 @@ export default function App() {
       <WeatherProvider>
         <Router>
           <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-            </Route>
+            <Route path="/" element={<Home />} />
+            <Route path="/day/:number" element={<Details />} />
           </Routes>
         </Router>
       </WeatherProvider>

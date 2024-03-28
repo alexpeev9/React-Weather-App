@@ -1,16 +1,11 @@
 import WeatherList from "../../components/weather/WeatherList";
 import { MeasurementForm } from "../../components/weather/MeasurementForm";
-import { UseWeatherContext } from "../../contexts/WeatherContext";
 
 export default function Home() {
-  const weather = UseWeatherContext();
-
-  return weather ? (
+  return (
     <>
       <MeasurementForm />
-      <WeatherList weather={weather} />
+      <WeatherList />
     </>
-  ) : (
-    <>Please allow geo locations</>
   );
 }

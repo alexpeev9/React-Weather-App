@@ -1,7 +1,9 @@
 import { useEffect } from "react";
-import { WeatherData } from "../../../utils/types";
+import { UseWeatherContext } from "../../../contexts/WeatherContext";
 
-export default function WeatherList({ weather }: { weather: WeatherData }) {
+export default function WeatherList() {
+  const weather = UseWeatherContext();
+
   useEffect(() => {
     console.log(weather);
   }, [weather]);
