@@ -19,10 +19,10 @@ export default function Details() {
         <br />
         {weatherDetails.map((item, key) => (
           <Fragment key={key}>
-            {item.time} - {item.description} - {item.main}
+            {item.date} - {item.temperature.temp}
             <img
-              src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`}
-              alt={item.icon}
+              src={`https://openweathermap.org/img/wn/${item.weatherHour.icon}@2x.png`}
+              alt={item.weatherHour.icon}
             />
             <br />
           </Fragment>

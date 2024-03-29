@@ -1,22 +1,17 @@
-import { WeatherInfo } from "../../../utils/types";
+import { Link } from "react-router-dom";
+import { WeatherDay } from "../../../utils/types";
 
-export default function WeatherItem({
-  weather,
-  date,
-}: {
-  weather: WeatherInfo;
-  date: string;
-}) {
-  const { main, icon, description } = weather;
+export default function WeatherItem({ weather }: { weather: WeatherDay }) {
+  const { date, temperature, weatherHour } = weather;
   return (
     <>
       <h2>{date}</h2>
-      <h2>{weather.main}</h2>
       <img
-        src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
-        alt={main}
+        src={`https://openweathermap.org/img/wn/${weatherHour.icon}@2x.png`}
+        alt={weatherHour.main}
       />
-      <p>{description}</p>
+      <p>{temperature.temp}</p>
+      <Link to={`/day/${date}`}>Link</Link>
     </>
   );
 }

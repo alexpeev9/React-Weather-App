@@ -1,15 +1,15 @@
 import { createContext, useContext } from "react";
 
-import { Props, WeatherListData, WeatherData } from "../utils/types";
+import { Props, WeatherWeek } from "../utils/types";
 import useGetWeatherData from "../hooks/useGetWeatherData";
 import useGetCoordinates from "../hooks/useGetCoordinates";
 import { UseMeasurementContext } from "./MeasurementContext";
 
-const WeatherContext = createContext<WeatherData | null>(null);
+const WeatherContext = createContext<WeatherWeek | null>(null);
 
 export type WeatherContextType = {
-  weather: WeatherListData | null;
-  saveWeather: (weather: WeatherListData) => void;
+  weather: WeatherWeek | null;
+  saveWeather: (weather: WeatherWeek) => void;
 };
 
 export function WeatherProvider({ children }: Props) {

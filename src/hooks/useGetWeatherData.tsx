@@ -2,21 +2,16 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import { getEndpointUrl } from "../utils/helpers";
-import {
-  Coordinates,
-  Measurement,
-  WeatherData,
-  WeatherList,
-  WeatherListData,
-} from "../utils/types";
+import { Coordinates, Measurement } from "../utils/types";
 import { UseMeasurementContext } from "../contexts/MeasurementContext";
+import { WeatherData, WeatherWeek } from "../utils/types";
 
 export default function useGetWeatherData(
   measurement: Measurement,
   coordinates: Coordinates | null
 ) {
   const { saveMeasurement } = UseMeasurementContext();
-  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
+  const [weatherData, setWeatherData] = useState<WeatherWeek | null>(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -34,11 +29,12 @@ export default function useGetWeatherData(
         )}`,
       })
         .then((res) => {
-          const weatherResponse = res.data as WeatherList;
-          const filteredData: WeatherListData = {};
+          const weatherResponse = res.data as WeatherData;
+          const filteredData: WeatherWeek = {};
 
-          weatherResponse.list.forEach((obj) => {
-            const dateArray = obj.dt_txt.split(" ");
+          weatherResponse.list.forEach((weatherWeek) => {
+            const { dt_txt, weather, main } = weatherWeek;
+            const dateArray = dt_txt.split(" ");
             const date = dateArray[0];
             const time = dateArray[1];
 
@@ -46,18 +42,15 @@ export default function useGetWeatherData(
               filteredData[date] = [];
             }
 
-            if (obj.weather.length > 0) {
+            if (weather.length > 0) {
               filteredData[date].push({
-                ...obj.weather[0],
-                time,
+                weatherHour: weather[0],
+                date: time,
+                temperature: main,
               });
             }
           });
-
-          setWeatherData({
-            city: weatherResponse.city,
-            weatherList: filteredData,
-          });
+          setWeatherData(filteredData);
         })
         .catch((err) => {
           console.log(err);

@@ -9,7 +9,7 @@ export function getEndpointUrl(
   longitude: number,
   measurement: Measurement
 ): string {
-  return `${API_URL}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&unit=${
+  return `${API_URL}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${
     measurement || "standard"
   }`;
 }
