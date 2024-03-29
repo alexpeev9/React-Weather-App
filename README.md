@@ -47,6 +47,7 @@ npm run dev
 
 - React.js
 - TypeScript
+- Styled-Components
 
 ## ☁︎ Contributors
 
