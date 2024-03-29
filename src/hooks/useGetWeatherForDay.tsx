@@ -1,20 +1,24 @@
 import { useMemo } from "react";
-import { useNavigate } from "react-router-dom";
 import { UseWeatherContext } from "../contexts/WeatherContext";
 
-export default function useGetWeatherForDay(number: string | undefined) {
-  const navigate = useNavigate();
+export default function useGetWeatherForDay(date: string | undefined) {
   const weather = UseWeatherContext();
 
-  return useMemo(() => {
-    if (!weather) {
+  const weatherForDay = useMemo(() => {
+    if (!weather || date === undefined) {
       return;
     }
 
-    if (!number || !/^[1-5]$/.test(number)) {
-      navigate("/not-found");
+    const filteredDay = Object.fromEntries(
+      Object.entries(weather.weatherList).filter(([key]) => key === date)
+    );
+
+    if (Object.keys(filteredDay).length === 0) {
+      return;
     }
 
-    return Object.values(weather.weatherList)[Number(number) - 1];
-  }, [navigate, number, weather]);
+    return filteredDay;
+  }, [date, weather]);
+
+  return weatherForDay;
 }

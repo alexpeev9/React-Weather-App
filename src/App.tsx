@@ -13,7 +13,8 @@ export default function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/day/:number" element={<Details />} />
+            <Route path="/day/:date" element={<Details />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </Router>
       </WeatherProvider>

@@ -1,11 +1,20 @@
-import { useEffect } from "react";
-import { UseWeatherContext } from "../../../contexts/WeatherContext";
+import { Fragment } from "react/jsx-runtime";
+import useGetWeatherForWeek from "../../../hooks/useGetWeatherForWeek";
+import { Link } from "react-router-dom";
 
 export default function WeatherList() {
-  const weather = UseWeatherContext();
+  const weathers = useGetWeatherForWeek();
 
-  useEffect(() => {
-    console.log(weather);
-  }, [weather]);
-  return <></>;
+  return (
+    weathers &&
+    weathers.map((item, key) => (
+      <Fragment key={key}>
+        <Link to={`/day/${item.date}`}>
+          | {item.date} - {item.weather.main} - {item.weather.main} -{" "}
+          {item.weather.icon}
+        </Link>
+        <br />
+      </Fragment>
+    ))
+  );
 }

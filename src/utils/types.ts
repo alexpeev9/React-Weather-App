@@ -42,3 +42,8 @@ export type WeatherData = {
   };
   weatherList: WeatherListData;
 };
+
+export type WeatherInfoList = {
+  date: string;
+  weather: WeatherInfo;
+};
