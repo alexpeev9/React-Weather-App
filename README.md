@@ -2,6 +2,8 @@
 
 This project is a weather forecast application built using React.js. It displays the weather forecast for the upcoming 5 days based on the user's location. Users have the ability to change the metric system of the weather, and their preferences are saved.
 
+### 🚨 Check out the live version on [nine-clouds.vercel.app](https://nine-clouds.vercel.app) 🚨
+
 ## ☁︎ Features
 
 - Displays weather forecast for the next 5 days.
@@ -53,4 +55,3 @@ npm run dev
 ## ☁︎ License
 
 This project is licensed under the [MIT License](LICENSE).
-
