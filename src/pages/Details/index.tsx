@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Fragment } from "react";
 import useGetWeatherForDay from "../../hooks/useGetWeatherForDay";
 
@@ -15,7 +15,7 @@ export default function Details() {
   return (
     weatherDetails && (
       <>
-        {date}
+        {date} - <Link to="/">Home</Link>
         <br />
         {weatherDetails.map((item, key) => (
           <Fragment key={key}>
