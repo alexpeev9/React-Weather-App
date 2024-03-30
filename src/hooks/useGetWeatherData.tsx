@@ -36,15 +36,18 @@ export default function useGetWeatherData(
 
           weatherResponse.list.forEach((weatherWeek) => {
             const { dt_txt, weather, main } = weatherWeek;
+            // Boolean to filter 6th day as per requirement
+            const isExceed = Object.keys(filteredData).length < 5;
+            // Get date and hours
             const dateArray = dt_txt.split(" ");
             const date = dateArray[0];
             const time = dateArray[1];
 
-            if (!filteredData[date]) {
+            if (!filteredData[date] && isExceed) {
               filteredData[date] = [];
             }
 
-            if (weather.length > 0) {
+            if (filteredData[date] && weather.length > 0) {
               filteredData[date].push({
                 weatherHour: weather[0],
                 date: time,
