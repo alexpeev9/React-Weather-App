@@ -1,5 +1,4 @@
 import { createContext, useContext } from "react";
-
 import { Props, WeatherContextType } from "../utils/types";
 import useGetWeatherData from "../hooks/useGetWeatherData";
 import useGetCoordinates from "../hooks/useGetCoordinates";

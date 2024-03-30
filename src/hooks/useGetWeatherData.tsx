@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
 import { getEndpointUrl } from "../utils/helpers";
 import { Coordinates, Unit } from "../utils/types";
 import { UseUnitContext } from "../contexts/UnitContext";

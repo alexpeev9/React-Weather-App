@@ -1,15 +1,15 @@
-import { apiKey } from "./env";
 import { Unit } from "./types";
 
-const API_URL: string = `https://api.openweathermap.org/data/2.5/forecast`;
+const API_KEY = `${import.meta.env.VITE_API_KEY}`;
+const API_URL = `https://api.openweathermap.org/data/2.5/forecast`;
 const LS_NAME = "unit";
 
 export function getEndpointUrl(
   latitude: number,
   longitude: number,
   unit: Unit
-): string {
-  return `${API_URL}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${
+) {
+  return `${API_URL}?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=${
     unit || "metric"
   }`;
 }

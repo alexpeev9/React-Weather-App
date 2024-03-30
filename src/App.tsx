@@ -1,13 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
 import { UnitProvider } from "./contexts/UnitContext";
 import { WeatherProvider } from "./contexts/WeatherContext";
-
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
-
 import ThemeProvider from "../src/assets/styles/theme/ThemeProvider";
 import { GlobalStyle } from "./assets/styles";
 
