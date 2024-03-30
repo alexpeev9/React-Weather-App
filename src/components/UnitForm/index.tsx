@@ -22,7 +22,7 @@ export const UnitForm = () => {
         id="metric"
         name="unit"
         value="metric"
-        checked={unit === "metric"}
+        checked={unit === "metric" || unit === null}
         onChange={handleUnitChange}
       />
       <Label htmlFor="metric">°C</Label>

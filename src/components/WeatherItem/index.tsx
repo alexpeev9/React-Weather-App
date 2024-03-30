@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { WeatherDay } from "../../utils/types";
-import { Image, WeatherContainer } from "./styled";
+import { H3, Image, P, Section, WeatherContainer } from "./styled";
 import { Unit } from "../../utils/types";
 
 export default function WeatherItem({
@@ -20,15 +20,15 @@ export default function WeatherItem({
         src={`https://openweathermap.org/img/wn/${weatherHour.icon}@2x.png`}
         alt={weatherHour.main}
       />
-      <div>
-        <h3>{date}</h3>
-        <p>
-          {temperature.temp} {unit === "metric" && "°C"}
+      <Section>
+        <H3>{date}</H3>
+        <P>
+          Temperature: {temperature.temp}{" "}
+          {(unit === "metric" || unit === null) && "°C"}
           {unit === "imperial" && "°F"}
-          {unit === null && "K"}
-        </p>
-        <p>{weatherHour.main}</p>
-      </div>
+        </P>
+        <P>Weather: {weatherHour.main}</P>
+      </Section>
     </WeatherContainer>
   );
 

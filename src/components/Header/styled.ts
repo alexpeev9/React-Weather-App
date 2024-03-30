@@ -7,11 +7,15 @@ export const HeaderContainer = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-bottom: 0.3rem solid ${(p) => p.theme.text};
+  margin-bottom: 1rem;
+  padding: 1rem 0.5rem;
 
   @media only screen and (min-width: ${(p) => p.theme.md}) {
     flex-direction: row;
     justify-content: space-around;
-    padding-bottom: 1rem;
+    margin-bottom: 5rem;
+    padding: 2rem 0;
   }
 `;
 

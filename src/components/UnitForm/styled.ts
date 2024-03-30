@@ -10,24 +10,7 @@ export const Form = styled.form`
     flex-direction: row;
   }
 
-  /* Hide the default radio button */
-  input[type="radio"] {
-    appearance: none; /* Remove default appearance */
-    -webkit-appearance: none; /* For Safari/Chrome */
-    -moz-appearance: none; /* For Firefox */
-    width: 16px; /* Size of the radio button */
-    height: 16px; /* Size of the radio button */
-    border: 2px solid black; /* Border color of the radio button */
-    border-radius: 50%; /* Makes it a circle */
-    outline: none; /* Remove outline */
-  }
-
-  /* Style the radio button when it's checked */
-  input[type="radio"]:checked {
-    background-color: black; /* Color when checked */
-  }
-
-  &l:hover,
+  &:hover,
   input:hover,
   label:hover {
     cursor: pointer;
@@ -35,8 +18,8 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   margin-right: 0.5rem;
 `;
 

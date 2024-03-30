@@ -11,3 +11,13 @@ export const Image = styled.img`
   width: 6rem;
   height: 6rem;
 `;
+
+export const P = styled.p``;
+
+export const H3 = styled.h3`
+  text-align: center;
+`;
+
+export const Section = styled.section`
+  padding: 0 0.3rem;
+`;
