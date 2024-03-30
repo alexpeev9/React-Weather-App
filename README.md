@@ -1,12 +1,12 @@
-# 9-Clouds Forecast Application
+# 9-Clouds | Weather Forecast Application
 
-This project is a weather forecast application built using React.js. It displays the weather forecast for the upcoming 5 days based on the user's location. Users have the ability to change the metric system of the weather, and their preferences are saved.
+This project is a weather forecast application built using React.js. It displays the weather forecast for the upcoming 4 days based on the user's location.
 
 ### 🚨 Check out the live version on [nine-clouds.vercel.app](https://nine-clouds.vercel.app) 🚨
 
 ## ☁︎ Features
 
-- Displays weather forecast for the next 5 days.
+- Displays weather forecast for the next 4 days.
 - Allows users to change the metric system of the weather.
 - Saves user preferences.
 - Mobile-friendly design.
