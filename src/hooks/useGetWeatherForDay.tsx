@@ -8,7 +8,7 @@ export default function useGetWeatherForDay(date: string | undefined) {
     if (!weather || date === undefined) {
       return;
     }
-    console.log(weather);
+
     const filteredDay = Object.fromEntries(
       Object.entries(weather).filter(([key]) => key === date)
     );

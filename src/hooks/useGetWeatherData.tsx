@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import { getEndpointUrl } from "../utils/helpers";
-import { Coordinates, Measurement } from "../utils/types";
-import { UseMeasurementContext } from "../contexts/MeasurementContext";
+import { Coordinates, Unit } from "../utils/types";
+import { UseUnitContext } from "../contexts/UnitContext";
 import { WeatherData, WeatherWeek } from "../utils/types";
 
 export default function useGetWeatherData(
-  measurement: Measurement,
+  unit: Unit,
   coordinates: Coordinates | null
 ) {
-  const { saveMeasurement } = UseMeasurementContext();
+  const { saveUnit } = UseUnitContext();
   const [weatherData, setWeatherData] = useState<WeatherWeek | null>(null);
 
   useEffect(() => {
@@ -18,14 +18,14 @@ export default function useGetWeatherData(
       if (!coordinates || !coordinates.latitude || !coordinates.longitude)
         return;
 
-      saveMeasurement(measurement);
+      saveUnit(unit);
 
       axios({
         method: "get",
         url: `${getEndpointUrl(
           coordinates.latitude,
           coordinates.longitude,
-          measurement
+          unit
         )}`,
       })
         .then((res) => {
@@ -58,7 +58,7 @@ export default function useGetWeatherData(
     }
 
     fetchData();
-  }, [coordinates, measurement, saveMeasurement]);
+  }, [coordinates, unit, saveUnit]);
 
   return { weatherData };
 }
