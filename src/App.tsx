@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { MeasurementProvider } from "./contexts/MeasurementContext";
+import { UnitProvider } from "./contexts/UnitContext";
 import { WeatherProvider } from "./contexts/WeatherContext";
 
 import Home from "./pages/Home";
@@ -13,7 +13,7 @@ import { GlobalStyle } from "./assets/styles";
 export default function App() {
   return (
     <ThemeProvider>
-      <MeasurementProvider>
+      <UnitProvider>
         <WeatherProvider>
           <Router>
             <Routes>
@@ -25,7 +25,7 @@ export default function App() {
             </Routes>
           </Router>
         </WeatherProvider>
-      </MeasurementProvider>
+      </UnitProvider>
       <GlobalStyle />
     </ThemeProvider>
   );

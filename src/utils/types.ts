@@ -45,7 +45,7 @@ export type Props = {
   children: ReactNode;
 };
 
-export type Measurement = "metric" | "imperial" | null;
+export type Unit = "metric" | "imperial" | null;
 
 export type Coordinates = {
   latitude: number | null;

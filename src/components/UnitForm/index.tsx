@@ -1,37 +1,37 @@
 import { ChangeEvent } from "react";
 
-import { UseMeasurementContext } from "../../contexts/MeasurementContext";
+import { UseUnitContext } from "../../contexts/UnitContext";
 
-import { Measurement } from "../../utils/types";
+import { Unit } from "../../utils/types";
 import { Form, Input, Label } from "./styled";
 
-const measurementValues = ["metric", "imperial"];
+const unitValues = ["metric", "imperial"];
 
-export const MeasurementForm = () => {
-  const { measurement, saveMeasurement } = UseMeasurementContext();
+export const UnitForm = () => {
+  const { unit, saveUnit } = UseUnitContext();
 
   const handleUnitChange = (event: ChangeEvent<HTMLInputElement>) => {
     const currentValue = event.target.value;
-    if (!measurementValues.includes(currentValue)) return;
-    saveMeasurement(currentValue as Measurement);
+    if (!unitValues.includes(currentValue)) return;
+    saveUnit(currentValue as Unit);
   };
   return (
     <Form>
       <Input
         type="radio"
         id="metric"
-        name="measurement"
+        name="unit"
         value="metric"
-        checked={measurement === "metric"}
+        checked={unit === "metric"}
         onChange={handleUnitChange}
       />
       <Label htmlFor="metric">°C</Label>
       <Input
         type="radio"
         id="imperial"
-        name="measurement"
+        name="unit"
         value="imperial"
-        checked={measurement === "imperial"}
+        checked={unit === "imperial"}
         onChange={handleUnitChange}
       />
       <Label htmlFor="imperial">°F</Label>

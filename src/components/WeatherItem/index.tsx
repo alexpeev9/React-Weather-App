@@ -2,15 +2,15 @@ import { Link } from "react-router-dom";
 
 import { WeatherDay } from "../../utils/types";
 import { Image, WeatherContainer } from "./styled";
-import { Measurement } from "../../utils/types";
+import { Unit } from "../../utils/types";
 
 export default function WeatherItem({
   weather,
-  measurement,
+  unit,
   isLink,
 }: {
   weather: WeatherDay;
-  measurement: Measurement;
+  unit: Unit;
   isLink: boolean;
 }) {
   const { date, temperature, weatherHour } = weather;
@@ -23,9 +23,9 @@ export default function WeatherItem({
       <div>
         <h3>{date}</h3>
         <p>
-          {temperature.temp} {measurement === "metric" && "°C"}
-          {measurement === "imperial" && "°F"}
-          {measurement === null && "K"}
+          {temperature.temp} {unit === "metric" && "°C"}
+          {unit === "imperial" && "°F"}
+          {unit === null && "K"}
         </p>
         <p>{weatherHour.main}</p>
       </div>
