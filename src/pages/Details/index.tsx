@@ -1,6 +1,7 @@
-import { Link, useParams } from "react-router-dom";
-import { Fragment } from "react";
+import { useParams } from "react-router-dom";
 import useGetWeatherForDay from "../../hooks/useGetWeatherForDay";
+import WeatherList from "../../components/WeatherList";
+import { Heading2, Span } from "./styled";
 
 export default function Details() {
   const { date } = useParams();
@@ -15,18 +16,10 @@ export default function Details() {
   return (
     weatherDetails && (
       <>
-        {date} - <Link to="/">Home</Link>
-        <br />
-        {weatherDetails.map((item, key) => (
-          <Fragment key={key}>
-            {item.date} - {item.temperature.temp}
-            <img
-              src={`https://openweathermap.org/img/wn/${item.weatherHour.icon}@2x.png`}
-              alt={item.weatherHour.icon}
-            />
-            <br />
-          </Fragment>
-        ))}
+        <Heading2>
+          Date: <Span>{date}</Span>
+        </Heading2>
+        <WeatherList weathers={weatherDetails} />
       </>
     )
   );

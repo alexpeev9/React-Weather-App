@@ -1,11 +1,14 @@
-import WeatherList from "../../components/weather/WeatherList";
-import { MeasurementForm } from "../../components/weather/MeasurementForm";
+import WeatherList from "../../components/WeatherList";
+import useGetWeatherForWeek from "../../hooks/useGetWeatherForWeek";
 
 export default function Home() {
+  const weathers = useGetWeatherForWeek();
+
   return (
-    <>
-      <MeasurementForm />
-      <WeatherList />
-    </>
+    weathers && (
+      <>
+        <WeatherList weathers={weathers} isLink={true} />
+      </>
+    )
   );
 }
