@@ -20,13 +20,12 @@ export const NotificationContainer = styled.div`
 
 export const NotificationText = styled.p`
   margin: 0;
-  padding: 1rem;
+  padding: 3rem 1rem;
   text-align: center;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 2.5rem;
 
   @media only screen and (min-width: ${(p) => p.theme.md}) {
     padding: 0 5rem;
-    font-size: 2.5rem;
   }
 `;
