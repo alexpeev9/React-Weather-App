@@ -6,6 +6,7 @@ import { WeatherProvider } from "./contexts/WeatherContext";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import Layout from "./components/Layout";
+import NotFound from "./pages/NotFound";
 
 import ThemeProvider from "../src/assets/styles/theme/ThemeProvider";
 import { GlobalStyle } from "./assets/styles";
@@ -19,8 +20,9 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Layout />}>
                 <Route index element={<Home />} />
-
                 <Route path="/day/:date" element={<Details />} />
+                <Route path="/not-found" element={<NotFound />} />
+                <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
           </Router>
