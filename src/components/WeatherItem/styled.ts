@@ -26,6 +26,12 @@ export const Span = styled.span`
 
 export const P = styled.p``;
 
+export const TextLink = styled.p`
+  font-weight: 800;
+  text-decoration: underline;
+  text-align: right;
+`;
+
 export const H3 = styled.h3`
   text-align: center;
 `;

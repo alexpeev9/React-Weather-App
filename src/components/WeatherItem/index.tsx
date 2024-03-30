@@ -8,6 +8,7 @@ import {
   P,
   Section,
   Span,
+  TextLink,
   WeatherContainer,
   WeatherText,
 } from "./styled";
@@ -23,6 +24,7 @@ export default function WeatherItem({
   isLink: boolean;
 }) {
   const { date, temperature, weatherHour } = weather;
+
   const card = (
     <WeatherContainer>
       <ImageSection>
@@ -44,6 +46,7 @@ export default function WeatherItem({
             {unit === "imperial" && "°F"}
           </Span>
         </P>
+        {isLink && <TextLink>Details</TextLink>}
       </Section>
     </WeatherContainer>
   );
