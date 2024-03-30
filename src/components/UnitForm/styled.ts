@@ -18,8 +18,8 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   margin-right: 0.5rem;
 `;
 

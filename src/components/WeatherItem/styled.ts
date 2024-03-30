@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 export const WeatherContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   background-color: white;
   border-radius: 0;
 
   @media only screen and (min-width: ${(p) => p.theme.md}) {
     border-radius: 1rem;
+    flex-direction: row;
   }
 `;
 
@@ -24,15 +26,26 @@ export const Span = styled.span`
   font-weight: 800;
 `;
 
-export const P = styled.p``;
+export const P = styled.p`
+  text-align: center;
+
+  @media only screen and (min-width: ${(p) => p.theme.md}) {
+    text-align: left;
+  }
+`;
 
 export const TextLink = styled.p`
   font-weight: 800;
   text-decoration: underline;
   text-align: right;
+  margin-right: 3rem;
 
   &:hover {
     text-decoration: none;
+  }
+
+  @media only screen and (min-width: ${(p) => p.theme.md}) {
+    margin: 0;
   }
 `;
 

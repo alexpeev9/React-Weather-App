@@ -12,15 +12,19 @@ export const HeaderContainer = styled.header`
   @media only screen and (min-width: ${(p) => p.theme.md}) {
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 5rem;
-    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
   }
 `;
 
 export const HeaderTitle = styled.h1`
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   text-align: center;
+
+  @media only screen and (min-width: ${(p) => p.theme.md}) {
+    font-size: 3rem;
+  }
 
   &:hover {
     text-decoration: underline;
