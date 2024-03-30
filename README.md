@@ -43,7 +43,7 @@ npm run dev
 
 6. Open your browser and visit [http://localhost:5173](http://localhost:5173) to view the application.
 
-7. Open another terminal and run cypress
+7. Open another terminal and run cypress:
 
 ```
 npm run cypress
@@ -51,7 +51,7 @@ npm run cypress
 
 8. Select `E2E Testing`, and a browser to test it.
 9. Select one from the two specs for home and details page.
-10. Click on either of them
+10. Click on either of them.
 
 ![Cypress Tests Image](https://i.imgur.com/5h4eJ9U.png)
 
@@ -60,7 +60,11 @@ npm run cypress
 - React.js
 - TypeScript
 - Styled-Components
+- Axios
+- React Router Dom
 - Cypress
+- Vite
+- Vercel
 
 ## ☁︎ Contributors
 
