@@ -1,25 +1,21 @@
 import { useEffect, useState } from "react";
 import { Coordinates } from "../utils/types";
-
-const text = {
-  default:
-    "To provide accurate information, please grant permission to access your device's location.",
-};
+import { textCoordinates } from "../utils/constants";
 
 export default function useGetCoordinates() {
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
-  const [message, setMessage] = useState<string>(text.default);
+  const [message, setMessage] = useState<string>(textCoordinates.default);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         setCoordinates({
-          latitude: position.coords.longitude,
+          latitude: position.coords.latitude,
           longitude: position.coords.longitude,
         });
       },
       () => {
-        setMessage(text.default);
+        setMessage(textCoordinates.default);
       }
     );
   }, []);

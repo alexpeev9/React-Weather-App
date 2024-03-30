@@ -4,6 +4,7 @@ import { UseUnitContext } from "../../contexts/UnitContext";
 
 import { Unit } from "../../utils/types";
 import { Form, Input, Label } from "./styled";
+import { textUnitMetrics } from "../../utils/constants";
 
 const unitValues = ["metric", "imperial"];
 
@@ -24,8 +25,9 @@ export const UnitForm = () => {
         value="metric"
         checked={unit === "metric" || unit === null}
         onChange={handleUnitChange}
+        data-test={"input-metric"}
       />
-      <Label htmlFor="metric">°C</Label>
+      <Label htmlFor="metric">{textUnitMetrics.metric}</Label>
       <Input
         type="radio"
         id="imperial"
@@ -33,8 +35,9 @@ export const UnitForm = () => {
         value="imperial"
         checked={unit === "imperial"}
         onChange={handleUnitChange}
+        data-test={"input-imperial"}
       />
-      <Label htmlFor="imperial">°F</Label>
+      <Label htmlFor="imperial">{textUnitMetrics.imperial}</Label>
     </Form>
   );
 };

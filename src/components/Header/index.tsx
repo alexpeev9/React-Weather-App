@@ -1,11 +1,15 @@
+import { Link } from "react-router-dom";
 import { UnitForm } from "../UnitForm";
 
-import { HeaderContainer, Link } from "./styled";
+import { HeaderContainer, HeaderTitle } from "./styled";
+import { textHeader } from "../../utils/constants";
 
 export default function Header() {
   return (
     <HeaderContainer>
-      <Link to="/">&#x1F326; 9 Clouds</Link>
+      <Link to="/">
+        <HeaderTitle data-test={"site-title"}>{textHeader.title}</HeaderTitle>
+      </Link>
       <UnitForm />
     </HeaderContainer>
   );

@@ -8,10 +8,12 @@ import {
   P,
   Section,
   Span,
+  TextLink,
   WeatherContainer,
   WeatherText,
 } from "./styled";
 import { Unit } from "../../utils/types";
+import { textUnitMetrics } from "../../utils/constants";
 
 export default function WeatherItem({
   weather,
@@ -23,8 +25,9 @@ export default function WeatherItem({
   isLink: boolean;
 }) {
   const { date, temperature, weatherHour } = weather;
+
   const card = (
-    <WeatherContainer>
+    <WeatherContainer data-test={`weather-item-${isLink ? "link" : "data"}`}>
       <ImageSection>
         <Image
           src={`https://openweathermap.org/img/wn/${weatherHour.icon}@2x.png`}
@@ -39,11 +42,13 @@ export default function WeatherItem({
         <H3>{date}</H3>
         <P>
           Temperature:{" "}
-          <Span>
-            {temperature.temp} {(unit === "metric" || unit === null) && "°C"}
-            {unit === "imperial" && "°F"}
+          <Span data-test="temperature-value">
+            {temperature.temp}{" "}
+            {(unit === "metric" || unit === null) && textUnitMetrics.metric}
+            {unit === "imperial" && textUnitMetrics.imperial}
           </Span>
         </P>
+        {isLink && <TextLink>Details</TextLink>}
       </Section>
     </WeatherContainer>
   );

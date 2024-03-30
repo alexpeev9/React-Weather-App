@@ -17,7 +17,7 @@ export default function Details() {
     weatherDetails && (
       <>
         <Heading>
-          Date: <Span>{date}</Span>
+          Date: <Span data-test="weather-date">{date}</Span>
         </Heading>
         <WeatherList weathers={weatherDetails} />
         <Section>
