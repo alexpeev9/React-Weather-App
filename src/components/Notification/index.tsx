@@ -3,7 +3,7 @@ import { NotificationContainer, NotificationText } from "./styled";
 export default function Notification({ message }: { message: string }) {
   return (
     <NotificationContainer>
-      <NotificationText>{message}</NotificationText>
+      <NotificationText data-test="notification">{message}</NotificationText>
     </NotificationContainer>
   );
 }

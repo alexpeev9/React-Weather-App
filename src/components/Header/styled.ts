@@ -1,5 +1,3 @@
-import { Link as RouterLink } from "react-router-dom";
-
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
@@ -19,7 +17,7 @@ export const HeaderContainer = styled.header`
   }
 `;
 
-export const Link = styled(RouterLink)`
+export const HeaderTitle = styled.h1`
   font-size: 3rem;
   font-weight: 800;
   text-align: center;
