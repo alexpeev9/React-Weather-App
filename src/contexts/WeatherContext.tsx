@@ -4,7 +4,11 @@ import { Props, WeatherContextType } from "../utils/types";
 import useGetWeatherData from "../hooks/useGetWeatherData";
 import useGetCoordinates from "../hooks/useGetCoordinates";
 import { UseUnitContext } from "./UnitContext";
-import Loader from "../components/Loader";
+import Notification from "../components/Notification";
+
+const notificationText = {
+  loading: "Loading...",
+};
 
 const WeatherContext = createContext<WeatherContextType>({
   weather: null,
@@ -12,16 +16,25 @@ const WeatherContext = createContext<WeatherContextType>({
 });
 
 export function WeatherProvider({ children }: Props) {
-  const { coordinates } = useGetCoordinates();
+  const { coordinates, message } = useGetCoordinates();
   const { unit } = UseUnitContext();
-  const { weatherData, loading } = useGetWeatherData(unit, coordinates);
+  const { weatherData, loading: loadingData } = useGetWeatherData(
+    unit,
+    coordinates
+  );
 
-  if (loading) {
-    return <Loader />;
+  if (loadingData) {
+    return <Notification message={notificationText.loading} />;
+  }
+
+  if (!coordinates) {
+    return <Notification message={message} />;
   }
 
   return (
-    <WeatherContext.Provider value={{ weather: weatherData, loading: loading }}>
+    <WeatherContext.Provider
+      value={{ weather: weatherData, loading: loadingData }}
+    >
       {children}
     </WeatherContext.Provider>
   );

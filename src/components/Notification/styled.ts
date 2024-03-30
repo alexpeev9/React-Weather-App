@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LoaderContainer = styled.div`
+export const NotificationContainer = styled.div`
   background-color: ${(p) => p.theme.primary};
   cursor: wait;
   overflow: hidden;
@@ -13,12 +13,16 @@ export const LoaderContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const NotificationText = styled.p`
+  padding: 1rem;
   text-align: center;
-  padding: 0 !important;
   font-weight: 800;
   font-size: 2.5rem;
 
-  @media only screen and (min-width: ${(p) => p.theme.sm}) {
-    font-size: 4rem;
+  @media only screen and (min-width: ${(p) => p.theme.md}) {
+    padding: 0 5rem;
+    font-size: 3rem;
   }
 `;
