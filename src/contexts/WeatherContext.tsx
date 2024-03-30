@@ -23,9 +23,9 @@ export function WeatherProvider({ children }: Props) {
     coordinates
   );
 
-  // if (loadingData) {
-  //   return <Notification message={notificationText.loading} />;
-  // }
+  if (loadingData) {
+    return <Notification message={notificationText.loading} />;
+  }
 
   if (!coordinates) {
     return <Notification message={message} />;
