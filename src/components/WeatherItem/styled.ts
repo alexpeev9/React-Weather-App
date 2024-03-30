@@ -13,11 +13,6 @@ export const WeatherContainer = styled.div`
   }
 `;
 
-export const Image = styled.img`
-  width: 6rem;
-  height: 6rem;
-`;
-
 export const WeatherText = styled.p`
   text-align: center;
 `;
