@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { WeatherDay } from "../../utils/types";
+import { WeatherListParams } from "../../utils/types";
 import {
   H3,
   ImageSection,
@@ -10,7 +10,6 @@ import {
   WeatherContainer,
   WeatherText,
 } from "./styled";
-import { Unit } from "../../utils/types";
 import { textUnitMetrics } from "../../utils/constants";
 import Image from "../Image";
 
@@ -18,11 +17,7 @@ export default function WeatherItem({
   weather,
   unit,
   isLink,
-}: {
-  weather: WeatherDay;
-  unit: Unit;
-  isLink: boolean;
-}) {
+}: WeatherListParams) {
   const { date, temperature, weatherHour } = weather;
 
   const card = (
