@@ -11,7 +11,7 @@ This project is a weather forecast application built using React.js. It displays
 - Saves user preferences.
 - Mobile-friendly design.
 
-## ☁︎ How to Run the Project
+## ☁︎ How to Run the Project and the E2E Tests
 
 To run the project locally, follow these steps:
 
@@ -43,11 +43,24 @@ npm run dev
 
 6. Open your browser and visit [http://localhost:5173](http://localhost:5173) to view the application.
 
+7. Open another terminal and run cypress
+
+```
+npm run cypress
+```
+
+8. Select `E2E Testing`, and a browser to test it.
+9. Select one from the two specs for home and details page.
+10. Click on either of them
+
+![Cypress Tests Image](https://i.imgur.com/5h4eJ9U.png)
+
 ## ☁︎ Technologies Used
 
 - React.js
 - TypeScript
 - Styled-Components
+- Cypress
 
 ## ☁︎ Contributors
 
