@@ -25,7 +25,6 @@ export const Input = styled.input`
 
 export const Label = styled.label`
   font-size: 2rem;
-  font-weight: 400;
   padding-right: 0;
   margin-bottom: 1.5rem;
 

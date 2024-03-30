@@ -15,7 +15,7 @@ export const HeaderContainer = styled.header`
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 5rem;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
 `;
 

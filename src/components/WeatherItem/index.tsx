@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 
 import { WeatherDay } from "../../utils/types";
-import { H3, Image, P, Section, WeatherContainer } from "./styled";
+import {
+  H3,
+  Image,
+  ImageSection,
+  P,
+  Section,
+  Span,
+  WeatherContainer,
+  WeatherText,
+} from "./styled";
 import { Unit } from "../../utils/types";
 
 export default function WeatherItem({
@@ -16,18 +25,25 @@ export default function WeatherItem({
   const { date, temperature, weatherHour } = weather;
   const card = (
     <WeatherContainer>
-      <Image
-        src={`https://openweathermap.org/img/wn/${weatherHour.icon}@2x.png`}
-        alt={weatherHour.main}
-      />
+      <ImageSection>
+        <Image
+          src={`https://openweathermap.org/img/wn/${weatherHour.icon}@2x.png`}
+          alt={weatherHour.main}
+        />
+        <WeatherText>
+          Weather: <Span>{weatherHour.main}</Span>
+        </WeatherText>
+      </ImageSection>
+
       <Section>
         <H3>{date}</H3>
         <P>
-          Temperature: {temperature.temp}{" "}
-          {(unit === "metric" || unit === null) && "°C"}
-          {unit === "imperial" && "°F"}
+          Temperature:{" "}
+          <Span>
+            {temperature.temp} {(unit === "metric" || unit === null) && "°C"}
+            {unit === "imperial" && "°F"}
+          </Span>
         </P>
-        <P>Weather: {weatherHour.main}</P>
       </Section>
     </WeatherContainer>
   );

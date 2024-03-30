@@ -12,10 +12,17 @@ export default function WeatherList({
 }) {
   const { unit } = UseUnitContext();
   return (
-    <WeatherContainer>
-      {weathers.map((weather, key) => (
-        <WeatherItem key={key} weather={weather} isLink={isLink} unit={unit} />
-      ))}
-    </WeatherContainer>
+    <>
+      <WeatherContainer>
+        {weathers.map((weather, key) => (
+          <WeatherItem
+            key={key}
+            weather={weather}
+            isLink={isLink}
+            unit={unit}
+          />
+        ))}
+      </WeatherContainer>
+    </>
   );
 }

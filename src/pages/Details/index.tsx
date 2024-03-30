@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import useGetWeatherForDay from "../../hooks/useGetWeatherForDay";
 import WeatherList from "../../components/WeatherList";
-import { Heading2, Span } from "./styled";
+import { Heading, Span, Link, Section } from "./styled";
 
 export default function Details() {
   const { date } = useParams();
@@ -16,10 +16,13 @@ export default function Details() {
   return (
     weatherDetails && (
       <>
-        <Heading2>
+        <Heading>
           Date: <Span>{date}</Span>
-        </Heading2>
+        </Heading>
         <WeatherList weathers={weatherDetails} />
+        <Section>
+          <Link to="/">Check other days</Link>
+        </Section>
       </>
     )
   );
