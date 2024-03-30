@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { UseWeatherContext } from "../contexts/WeatherContext";
 
 export default function useGetWeatherForDay(date: string | undefined) {
-  const weather = UseWeatherContext();
+  const { weather } = UseWeatherContext();
 
   const weatherForDay = useMemo(() => {
     if (!weather || date === undefined) {
@@ -20,5 +20,5 @@ export default function useGetWeatherForDay(date: string | undefined) {
     return filteredDay;
   }, [date, weather]);
 
-  return weatherForDay;
+  return { weatherForDay };
 }

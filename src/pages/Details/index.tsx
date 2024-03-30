@@ -5,13 +5,13 @@ import { Heading, Span, Link, Section } from "./styled";
 
 export default function Details() {
   const { date } = useParams();
-  const weatherDetailsObject = useGetWeatherForDay(date);
+  const { weatherForDay } = useGetWeatherForDay(date);
 
   if (!date) {
     return <>Not a valid date</>;
   }
 
-  const weatherDetails = weatherDetailsObject && weatherDetailsObject[date];
+  const weatherDetails = weatherForDay && weatherForDay[date];
 
   return (
     weatherDetails && (

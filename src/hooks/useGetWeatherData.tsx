@@ -12,11 +12,13 @@ export default function useGetWeatherData(
 ) {
   const { saveUnit } = UseUnitContext();
   const [weatherData, setWeatherData] = useState<WeatherWeek | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     async function fetchData() {
       if (!coordinates || !coordinates.latitude || !coordinates.longitude)
         return;
+      setLoading(true);
 
       saveUnit(unit);
 
@@ -54,11 +56,14 @@ export default function useGetWeatherData(
         })
         .catch((err) => {
           console.log(err);
+        })
+        .finally(() => {
+          setLoading(false);
         });
     }
 
     fetchData();
   }, [coordinates, unit, saveUnit]);
 
-  return { weatherData };
+  return { weatherData, loading };
 }
