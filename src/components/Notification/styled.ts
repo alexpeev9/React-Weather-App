@@ -12,17 +12,21 @@ export const NotificationContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+
+  @media only screen and (min-width: ${(p) => p.theme.md}) {
+    align-items: center;
+  }
 `;
 
 export const NotificationText = styled.p`
+  margin: 0;
   padding: 1rem;
   text-align: center;
   font-weight: 800;
-  font-size: 2.5rem;
+  font-size: 1rem;
 
   @media only screen and (min-width: ${(p) => p.theme.md}) {
     padding: 0 5rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 `;

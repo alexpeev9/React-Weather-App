@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { StyleConstants } from "./StyleConstants";
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -18,7 +17,6 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: ${(p) => p.theme.text};
-    padding-bottom: ${StyleConstants.BASE_PADDING};
   }
 `;
 
