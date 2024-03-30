@@ -41,6 +41,11 @@ export type WeatherDay = {
   weatherHour: weatherHourData;
 };
 
+export type WeatherContextType = {
+  weather: WeatherWeek | null;
+  loading: boolean;
+};
+
 export type Props = {
   children: ReactNode;
 };

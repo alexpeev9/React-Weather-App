@@ -4,8 +4,9 @@ import { UseWeatherContext } from "../contexts/WeatherContext";
 import { WeatherDay } from "../utils/types";
 
 export default function useGetWeatherForWeek() {
-  const weather = UseWeatherContext();
-  return useMemo(() => {
+  const { weather } = UseWeatherContext();
+
+  const weatherWeekList = useMemo(() => {
     if (!weather) {
       return;
     }
@@ -22,4 +23,6 @@ export default function useGetWeatherForWeek() {
 
     return filteredResult;
   }, [weather]);
+
+  return { weatherWeekList };
 }
