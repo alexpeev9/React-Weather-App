@@ -7,11 +7,7 @@ export default function Details() {
   const { date } = useParams();
   const { weatherForDay } = useGetWeatherForDay(date);
 
-  if (!date) {
-    return;
-  }
-
-  const weatherDetails = weatherForDay && weatherForDay[date];
+  const weatherDetails = date && weatherForDay && weatherForDay[date];
 
   return (
     weatherDetails && (
