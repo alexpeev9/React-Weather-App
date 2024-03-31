@@ -18,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: ${(p) => p.theme.secondary};
   }
+
+  .d-none {
+    display: none;
+  }
 `;
 
 export default GlobalStyle;

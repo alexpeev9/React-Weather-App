@@ -1,16 +1,33 @@
 import { useState } from "react";
 import { ImageContainer } from "./styled";
-import fallbackImage from "../../assets/images/fallbackImage.png";
+
 import { ImageParams } from "../../utils/types";
+import Loader from "../Loader";
 
 export default function Image({ icon, alt }: ImageParams) {
-  const [image, setImage] = useState(
-    `https://openweathermap.org/img/wn/${icon}@2x.png`
-  );
+  const [loading, isLoading] = useState(true);
+  const imageURL = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
-  function handleImageError() {
-    setImage(fallbackImage);
+  // Function to handle image load event
+  function handleImageLoad() {
+    isLoading(false);
   }
 
-  return <ImageContainer onError={handleImageError} src={image} alt={alt} />;
+  // Function to handle image error event
+  function handleImageError() {
+    isLoading(true);
+  }
+
+  return (
+    <>
+      {loading && <Loader />}
+      <ImageContainer
+        className={`${loading ? "d-none" : ""}`}
+        onLoad={handleImageLoad}
+        onError={handleImageError}
+        src={imageURL}
+        alt={alt}
+      />
+    </>
+  );
 }
