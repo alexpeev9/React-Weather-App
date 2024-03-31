@@ -28,7 +28,6 @@ export default function WeatherItem({
           Weather: <Span>{weatherHour.main}</Span>
         </WeatherText>
       </ImageSection>
-
       <Section>
         <H3>{date}</H3>
         <P>

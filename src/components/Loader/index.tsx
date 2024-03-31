@@ -1,10 +1,11 @@
 import { Svg } from "./styled";
+import { theme } from "../../assets/styles/theme";
 
 export default function Loader() {
   return (
     <>
       <Svg
-        fill="#f2b524"
+        fill={`${theme.primary}`}
         version="1.1"
         id="Loader"
         xmlns="http://www.w3.org/2000/svg"
