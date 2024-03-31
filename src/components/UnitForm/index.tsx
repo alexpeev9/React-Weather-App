@@ -4,16 +4,15 @@ import { Unit } from "../../utils/types";
 import { Form, Input, Label } from "./styled";
 import { textUnitMetrics } from "../../utils/constants";
 
-const unitValues = ["metric", "imperial"];
-
 export const UnitForm = () => {
   const { unit, saveUnit } = UseUnitContext();
 
+  // Handle unit change event
   const handleUnitChange = (event: ChangeEvent<HTMLInputElement>) => {
     const currentValue = event.target.value;
-    if (!unitValues.includes(currentValue)) return;
     saveUnit(currentValue as Unit);
   };
+
   return (
     <Form>
       <Input

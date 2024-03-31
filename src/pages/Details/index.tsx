@@ -7,6 +7,7 @@ export default function Details() {
   const { date } = useParams();
   const { weatherForDay } = useGetWeatherForDay(date);
 
+  // Extracting weather details for the specified day
   const weatherDetails = date && weatherForDay && weatherForDay[date];
 
   return (
