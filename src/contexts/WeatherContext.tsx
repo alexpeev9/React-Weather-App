@@ -4,10 +4,7 @@ import useGetWeatherData from "../hooks/useGetWeatherData";
 import useGetCoordinates from "../hooks/useGetCoordinates";
 import { UseUnitContext } from "./UnitContext";
 import Notification from "../components/Notification";
-
-const notificationText = {
-  loading: "Loading...",
-};
+import { textMessages } from "../utils/constants";
 
 const WeatherContext = createContext<WeatherContextType>({
   weather: null,
@@ -15,6 +12,7 @@ const WeatherContext = createContext<WeatherContextType>({
 });
 
 export function WeatherProvider({ children }: Props) {
+  // Using custom hooks to get coordinates and weather data
   const { coordinates, message } = useGetCoordinates();
   const { unit } = UseUnitContext();
   const { weatherData, loading: loadingData } = useGetWeatherData(
@@ -22,10 +20,12 @@ export function WeatherProvider({ children }: Props) {
     coordinates
   );
 
+  // Display a loading container while getting weather data
   if (loadingData) {
-    return <Notification message={notificationText.loading} />;
+    return <Notification message={textMessages.loading} />;
   }
 
+  // Display a message container if geolocation is not allowed
   if (!coordinates) {
     return <Notification message={message} />;
   }

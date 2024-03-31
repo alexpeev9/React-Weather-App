@@ -5,8 +5,8 @@ import Home from "./pages/Home";
 import Details from "./pages/Details";
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
-import ThemeProvider from "../src/assets/styles/theme/ThemeProvider";
-import { GlobalStyle } from "./assets/styles";
+import ThemeProvider from "./assets/styles/ThemeProvider";
+import GlobalStyle from "./assets/styles/GlobalStyle";
 
 export default function App() {
   return (

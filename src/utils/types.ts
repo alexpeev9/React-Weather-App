@@ -41,6 +41,11 @@ export type WeatherDay = {
   weatherHour: weatherHourData;
 };
 
+export type UnitContextType = {
+  unit: Unit | null;
+  saveUnit: (unit: Unit) => void;
+};
+
 export type WeatherContextType = {
   weather: WeatherWeek | null;
   loading: boolean;
