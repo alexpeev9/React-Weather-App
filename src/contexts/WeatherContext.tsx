@@ -4,7 +4,7 @@ import useGetWeatherData from "../hooks/useGetWeatherData";
 import useGetCoordinates from "../hooks/useGetCoordinates";
 import { UseUnitContext } from "./UnitContext";
 import Notification from "../components/Notification";
-import { textMessages } from "../utils/constants";
+import { textMessage } from "../utils/constants";
 
 const WeatherContext = createContext<WeatherContextType>({
   weather: null,
@@ -22,7 +22,7 @@ export function WeatherProvider({ children }: Props) {
 
   // Display a loading container while getting weather data
   if (loadingData) {
-    return <Notification message={textMessages.loading} />;
+    return <Notification message={textMessage.loading} />;
   }
 
   // Display a message container if geolocation is not allowed

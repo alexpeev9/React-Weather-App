@@ -1,4 +1,4 @@
-import { textUnitMetrics, textHeader } from "../../src/utils/constants";
+import { textUnitMetrics, textPage } from "../../src/utils/constants";
 
 // Test suite for the Home Page
 describe("Test - Home Page", () => {
@@ -9,7 +9,7 @@ describe("Test - Home Page", () => {
 
   // Test to confirm that the page can open
   it("Confirm page can open.", () => {
-    cy.get("h1").should("exist").should("have.text", textHeader.title);
+    cy.get("h1").should("exist").should("have.text", textPage.title);
   });
 
   // Test to confirm that there are 5 days displayed on the page

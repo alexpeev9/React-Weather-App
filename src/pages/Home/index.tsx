@@ -1,5 +1,6 @@
 import WeatherList from "../../components/WeatherList";
 import useGetWeatherForWeek from "../../hooks/useGetWeatherForWeek";
+import { textPage } from "../../utils/constants";
 import { Heading } from "../Details/styled";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
   return (
     weatherWeekList && (
       <>
-        <Heading>Days:</Heading>
+        <Heading>{textPage.days}</Heading>
         <WeatherList weathers={weatherWeekList} isLink={true} />
       </>
     )

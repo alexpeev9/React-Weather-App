@@ -1,4 +1,4 @@
-import { textHeader } from "../../src/utils/constants";
+import { textPage } from "../../src/utils/constants";
 
 // Get current date
 const currentDateRaw = new Date();
@@ -15,7 +15,7 @@ describe("Test - Details Page", () => {
 
   // Confirm that the page can open and has the specified title
   it("Confirm page can open.", () => {
-    cy.get("h1").should("exist").should("have.text", textHeader.title);
+    cy.get("h1").should("exist").should("have.text", textPage.title);
   });
 
   // Confirm the presence of the date text on the page
@@ -49,7 +49,7 @@ describe("Test - Details Page for next day", () => {
 
   // Confirm that the page can open
   it("Confirm page can open.", () => {
-    cy.get("h1").should("exist").should("have.text", textHeader.title);
+    cy.get("h1").should("exist").should("have.text", textPage.title);
   });
 
   // Confirm the presence of at least one hour's data for tomorrow
