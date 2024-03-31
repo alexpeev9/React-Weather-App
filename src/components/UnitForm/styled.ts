@@ -6,7 +6,7 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
 
-  @media only screen and (min-width: ${(p) => p.theme.sm}) {
+  ${(p) => p.theme.media.sm} {
     flex-direction: row;
   }
 
@@ -24,11 +24,11 @@ export const Input = styled.input`
 `;
 
 export const Label = styled.label`
-  font-size: 2rem;
+  font-size: ${(p) => p.theme.fontSize.sm};
   padding-right: 0;
   margin-bottom: 1.5rem;
 
-  @media only screen and (min-width: ${(p) => p.theme.sm}) {
+  ${(p) => p.theme.media.sm} {
     padding-right: 2rem;
     margin-bottom: 0;
   }

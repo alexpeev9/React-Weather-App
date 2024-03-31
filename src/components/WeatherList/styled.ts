@@ -5,12 +5,12 @@ export const WeatherContainer = styled.div`
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
 
-  @media only screen and (min-width: ${(p) => p.theme.md}) {
+  ${(p) => p.theme.media.md} {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
 
-  @media only screen and (min-width: ${(p) => p.theme.lg}) {
+  ${(p) => p.theme.media.lg} {
     grid-template-columns: repeat(3, 1fr);
     gap: 5rem;
   }

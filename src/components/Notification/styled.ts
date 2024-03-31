@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NotificationContainer = styled.div`
-  background-color: ${(p) => p.theme.primary};
+  background-color: ${(p) => p.theme.color.primary};
   cursor: wait;
   overflow: hidden;
   position: fixed;
@@ -13,7 +13,7 @@ export const NotificationContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  @media only screen and (min-width: ${(p) => p.theme.md}) {
+  ${(p) => p.theme.media.md} {
     align-items: center;
   }
 `;
@@ -23,9 +23,9 @@ export const NotificationText = styled.p`
   padding: 3rem 1rem;
   text-align: center;
   font-weight: 800;
-  font-size: 2.5rem;
+  font-size: ${(p) => p.theme.fontSize.md};
 
-  @media only screen and (min-width: ${(p) => p.theme.md}) {
+  ${(p) => p.theme.media.md} {
     padding: 0 5rem;
   }
 `;

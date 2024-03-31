@@ -5,7 +5,7 @@ export default function Loader() {
   return (
     <>
       <Svg
-        fill={`${theme.primary}`}
+        fill={`${theme.color.primary}`}
         version="1.1"
         id="Loader"
         xmlns="http://www.w3.org/2000/svg"
