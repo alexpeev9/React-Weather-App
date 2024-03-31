@@ -7,7 +7,7 @@ export const WeatherContainer = styled.div`
   background-color: white;
   border-radius: 0;
 
-  @media only screen and (min-width: ${(p) => p.theme.md}) {
+  ${(p) => p.theme.media.md} {
     border-radius: 1rem;
     flex-direction: row;
   }
@@ -24,7 +24,7 @@ export const Span = styled.span`
 export const P = styled.p`
   text-align: center;
 
-  @media only screen and (min-width: ${(p) => p.theme.md}) {
+  ${(p) => p.theme.media.md} {
     text-align: left;
   }
 `;
@@ -39,7 +39,7 @@ export const TextLink = styled.p`
     text-decoration: none;
   }
 
-  @media only screen and (min-width: ${(p) => p.theme.md}) {
+  ${(p) => p.theme.media.md} {
     margin: 0;
   }
 `;

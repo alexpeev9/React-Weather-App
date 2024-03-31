@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 export const Heading = styled.h2`
   text-align: center;
 
-  @media only screen and (min-width: ${(p) => p.theme.md}) {
+  ${(p) => p.theme.media.md} {
     text-align: left;
   }
 `;
@@ -21,7 +21,7 @@ export const Section = styled.section`
 `;
 
 export const Link = styled(RouterLink)`
-  font-size: 1.5rem;
+  font-size: ${(p) => p.theme.fontSize.sm};
   text-decoration: underline;
   margin-bottom: 1.5rem;
 
