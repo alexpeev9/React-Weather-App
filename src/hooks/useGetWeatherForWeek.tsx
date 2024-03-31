@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-
 import { UseWeatherContext } from "../contexts/WeatherContext";
 import { WeatherDay } from "../utils/types";
 

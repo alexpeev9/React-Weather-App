@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
 import { Coordinates } from "../utils/types";
-import { textCoordinates } from "../utils/constants";
+import { textMessages } from "../utils/constants";
 
 export default function useGetCoordinates() {
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
-  const [message, setMessage] = useState<string>(textCoordinates.default);
+  const [message, setMessage] = useState<string>(textMessages.coords);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
+      // Success callback function
       (position) => {
+        // Setting coordinates from geolocation API
         setCoordinates({
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
         });
       },
+      // Error callback function
       () => {
-        setMessage(textCoordinates.default);
+        setMessage(textMessages.coords);
       }
     );
   }, []);

@@ -16,7 +16,11 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${(p) => p.theme.text};
+    color: ${(p) => p.theme.secondary};
+  }
+
+  .d-none {
+    display: none;
   }
 `;
 

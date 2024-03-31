@@ -8,7 +8,7 @@ export default function Details() {
   const { weatherForDay } = useGetWeatherForDay(date);
 
   if (!date) {
-    return <>Not a valid date</>;
+    return;
   }
 
   const weatherDetails = weatherForDay && weatherForDay[date];

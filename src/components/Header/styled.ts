@@ -5,7 +5,7 @@ export const HeaderContainer = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: 0.3rem solid ${(p) => p.theme.text};
+  border-bottom: 0.3rem solid ${(p) => p.theme.secondary};
   margin-bottom: 1rem;
   padding: 1rem 0.5rem;
 

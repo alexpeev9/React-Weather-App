@@ -1,15 +1,12 @@
 import { UseUnitContext } from "../../contexts/UnitContext";
-import { WeatherDay } from "../../utils/types";
+import { WeatherDayParams } from "../../utils/types";
 import WeatherItem from "../WeatherItem";
 import { WeatherContainer } from "./styled";
 
 export default function WeatherList({
   weathers,
   isLink = false,
-}: {
-  weathers: WeatherDay[];
-  isLink?: boolean;
-}) {
+}: WeatherDayParams) {
   const { unit } = UseUnitContext();
   return (
     <>

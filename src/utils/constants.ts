@@ -1,6 +1,7 @@
-export const textCoordinates = {
-  default:
+export const textMessages = {
+  coords:
     "To provide accurate information, please grant permission to access your device's location.",
+  loading: "Loading...",
 };
 
 export const textHeader = {

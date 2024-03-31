@@ -41,10 +41,28 @@ export type WeatherDay = {
   weatherHour: weatherHourData;
 };
 
+export type UnitContextType = {
+  unit: Unit | null;
+  saveUnit: (unit: Unit) => void;
+};
+
 export type WeatherContextType = {
   weather: WeatherWeek | null;
   loading: boolean;
 };
+
+export type WeatherListParams = {
+  weather: WeatherDay;
+  unit: Unit;
+  isLink: boolean;
+};
+
+export type WeatherDayParams = {
+  weathers: WeatherDay[];
+  isLink?: boolean;
+};
+
+export type ImageParams = { icon: string; alt: string };
 
 export type Props = {
   children: ReactNode;
