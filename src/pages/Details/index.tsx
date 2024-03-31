@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useGetWeatherForDay from "../../hooks/useGetWeatherForDay";
 import WeatherList from "../../components/WeatherList";
 import { Heading, Span, Link, Section } from "./styled";
+import { textPage } from "../../utils/constants";
 
 export default function Details() {
   const { date } = useParams();
@@ -14,11 +15,12 @@ export default function Details() {
     weatherDetails && (
       <>
         <Heading>
-          Date: <Span data-test="weather-date">{date}</Span>
+          {textPage.date}
+          <Span data-test="weather-date">{date}</Span>
         </Heading>
         <WeatherList weathers={weatherDetails} />
         <Section>
-          <Link to="/">Check other days</Link>
+          <Link to="/">{textPage.link}</Link>
         </Section>
       </>
     )

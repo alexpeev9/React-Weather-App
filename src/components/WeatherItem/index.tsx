@@ -10,7 +10,7 @@ import {
   WeatherContainer,
   WeatherText,
 } from "./styled";
-import { textUnitMetrics } from "../../utils/constants";
+import { textPage, textUnitMetrics } from "../../utils/constants";
 import Image from "../Image";
 
 export default function WeatherItem({
@@ -25,20 +25,21 @@ export default function WeatherItem({
       <ImageSection>
         <Image icon={weatherHour.icon} alt={weatherHour.main} />
         <WeatherText>
-          Weather: <Span>{weatherHour.main}</Span>
+          {textPage.weatherInfo}
+          <Span>{weatherHour.main}</Span>
         </WeatherText>
       </ImageSection>
       <Section>
         <H3>{date}</H3>
         <P>
-          Temperature:{" "}
+          {textPage.weatherTemp}
           <Span data-test="temperature-value">
             {temperature.temp}{" "}
             {(unit === "metric" || unit === null) && textUnitMetrics.metric}
             {unit === "imperial" && textUnitMetrics.imperial}
           </Span>
         </P>
-        {isLink && <TextLink>Details</TextLink>}
+        {isLink && <TextLink>{textPage.button}</TextLink>}
       </Section>
     </WeatherContainer>
   );

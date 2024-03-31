@@ -1,6 +1,6 @@
 import { NotificationText } from "../../components/Notification/styled";
-import { textMessages } from "../../utils/constants";
+import { textPage } from "../../utils/constants";
 
 export default function NotFound() {
-  return <NotificationText>{textMessages.notFound}</NotificationText>;
+  return <NotificationText>{textPage.notFound}</NotificationText>;
 }

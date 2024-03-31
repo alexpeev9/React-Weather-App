@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Coordinates } from "../utils/types";
-import { textMessages } from "../utils/constants";
+import { textMessage } from "../utils/constants";
 
 export default function useGetCoordinates() {
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
-  const [message, setMessage] = useState<string>(textMessages.coords);
+  const [message, setMessage] = useState<string>(textMessage.coords);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -18,7 +18,7 @@ export default function useGetCoordinates() {
       },
       // Error callback function
       () => {
-        setMessage(textMessages.coords);
+        setMessage(textMessage.coords);
       }
     );
   }, []);
