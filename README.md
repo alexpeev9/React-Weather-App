@@ -46,12 +46,11 @@ npm run dev
 7. Open another terminal and run cypress:
 
 ```
-npm run cypress
+npm run test
 ```
 
-8. Select `E2E Testing`, and a browser to test it.
-9. Select one from the two specs for home and details page.
-10. Click on either of them.
+8. Select `E2E Testing` and a browser to test it.
+9. Click one of the two specs to proceed.
 
 ![Cypress Tests Image](https://i.imgur.com/5h4eJ9U.png)
 
@@ -65,11 +64,3 @@ npm run cypress
 - Cypress
 - Vite
 - Vercel
-
-## ☁︎ Contributors
-
-- [Aleksandar Peev](https://github.com/alexpeev9)
-
-## ☁︎ License
-
-This project is licensed under the [MIT License](LICENSE).

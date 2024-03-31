@@ -10,8 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: ${(p) => p.theme.primary};
-
+    background-color:  ${(p) => p.theme.primary};
   }
 
   a {
